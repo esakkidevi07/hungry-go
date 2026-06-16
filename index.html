@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>🍔🚀Hungry Go Website </title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+  <div class="logo">🍔🚀Hungry Go</div>
+  <div>
+    <button onclick="openLogin()">Login</button>
+    <button onclick="toggleCart()">Cart 🛒</button>
+  </div>
+  <button id="darkModeBtn" onclick="toggleDarkMode()">
+    🌙 Dark Mode
+</button>
+</header>
+
+<div class="hero">
+  <h1>Order Delicious Food 🍕</h1>
+</div>
+
+<div class="offers">
+🔥 50% OFF + Free Delivery | CODE: FOOD50
+</div>
+
+<div class="search-box">
+    <input type="text" id="searchInput" placeholder="Search your food!..." onkeyup="searchFood()">
+</div>
+<!--food category-->
+<button class="category-btn biryani"> Biryani</button>
+<button class="category-btn south-indian">South Indian</button>
+<button class="category-btn chinese">Chinese</button>
+<button class="category-btn burger">Burger</button>
+<button class="category-btn pizza">Pizza</button>
+<button class="category-btn nonveg">Non-veg</button>
+<button class="category-btn veg">Veg</button>
+<button class="category-btn drinks">Drinks</button>
+<button class="category-btn desserts">Desserts</button>
+
+<!-- MENU -->
+<div class="menu">
+
+  <div class="card">
+    <img src="dosa.PNG">
+    <h3>Dosa</h3>
+    <div class="price">₹60</div>
+    <div class="rating">⭐⭐⭐⭐☆ (4.8)</div>
+    <button onclick="add('Dosa')">Add to Cart</button>
+  </div>
+
+  <div class="card">
+    <img src="idly.PNG">
+    <h3>Idly</h3>
+    <div class="price">₹60</div>
+    <div class="rating">⭐⭐⭐⭐⭐ (4.6)</div>
+    <button onclick="add('Idly')">Add to Cart</button>
+  </div>
+
+  <div class="card">
+    <img src="pongal.PNG">
+    <h3>Pongal</h3>
+    <div class="price">₹70</div>
+    <div class="rating">⭐⭐⭐⭐☆ (4.6)</div>
+    <button onclick="add('Pongal')">Add to Cart</button>
+  </div>
+
+  <div class="card">
+    <img src="poori.PNG">
+    <h3>Poori</h3>
+    <div class="price">₹80</div>
+    <div class="rating">⭐⭐⭐⭐☆ (4.6)</div>
+    <button onclick="add('Poori')">Add to Cart</button>
+  </div>
+
+  <div class="card">
+    <img src="noodles.PNG">
+    <h3>Noodles</h3>
+    <div class="price">₹120</div>
+    <div class="rating">⭐⭐⭐⭐☆ (4.5)</div>
+    <button onclick="add('Noodles')">Add to Cart</button>
+  </div>
+
+  <div class="card">
+    <img src="fried rice.PNG">
+    <h3>Fried Rice</h3>
+    <div class="price">₹140</div>
+    <div class="rating">⭐⭐⭐⭐☆ (4.4)</div>
+    <button onclick="add('Fried Rice')">Add to Cart</button>
+  </div>
+
+  <div class="card">
+    <img src="momos.PNG">
+    <h3>Momos</h3>
+    <div class="price">₹110</div>
+    <div class="rating">⭐⭐⭐⭐☆ (4.6)</div>
+    <button onclick="add('Momos')">Add to Cart</button>
+  </div>
+
+  <div class="card">
+    <img src="pasta.PNG">
+    <h3>Pasta</h3>
+    <div class="price">₹150</div>
+    <div class="rating">⭐⭐⭐⭐☆ (4.4)</div>
+    <button onclick="add('Pasta')">Add to Cart</button>
+  </div>
+
+  <div class="card">
+    <img src="marghe.PNG">
+    <h3>Margherita Pizza</h3>
+    <div class="price">₹199</div>
+    <div class="rating">⭐⭐⭐⭐☆ (4.8)</div>
+    <button onclick="add('Margherita Pizza')">Add to Cart</button>
+  </div>
+
+  <div class="card">
+    <img src="veg pizza.PNG">
+    <h3>Veg Pizza</h3>
+    <div class="price">₹249</div>
+    <div class="rating">⭐⭐⭐⭐☆ (4.7)</div>
+    <button onclick="add('Veg Pizza')">Add to Cart</button>
+  </div>
+
+  <div class="card">
+    <img src="pizza.PNG">
+    <h3>Cheese Burst Pizza</h3>
+    <div class="price">₹299</div>
+    <div class="rating">⭐⭐⭐⭐☆ (4.9)</div>
+    <button onclick="add('Cheese Burst Pizza')">Add to Cart</button>
+  </div>
+
+  <div class="card">
+    <img src="vegburger.PNG">
+    <h3>Veg Burger</h3>
+    <div class="price">₹129</div>
+    <div class="rating">⭐⭐⭐⭐☆ (4.5)</div>
+    <button onclick="add('Veg Burger')">Add to Cart</button>
+  </div>
+
+  <div class="card">
+    <img src="chickenburger.PNG">
+    <h3>Chicken Burger</h3>
+    <div class="price">₹159</div>
+    <div class="rating">⭐⭐⭐⭐☆ (4.7)</div>
+    <button onclick="add('Chicken Burger')">Add to Cart</button>
+  </div>
+
+  <div class="card">
+    <img src="cheeseburger.PNG">
+    <h3>Cheese Burger</h3>
+    <div class="price">₹179</div>
+    <div class="rating">⭐⭐⭐⭐☆ (4.8)</div>
+    <button onclick="add('Cheese Burger')">Add to Cart</button>
+  </div>
+
+  <div class="card">
+    <img src="chicken65.PNG">
+    <h3>Chicken 65</h3>
+    <div class="price">₹220</div>
+    <div class="rating">⭐⭐⭐⭐☆ (4.9)</div>
+    <button onclick="add('Chicken 65')">Add to Cart</button>
+  </div>
+
+  <div class="card">
+    <img src="tandoori.PNG">
+    <h3>Tandoori Chicken</h3>
+    <div class="price">₹320</div>
+    <div class="rating">⭐⭐⭐⭐☆ (4.8)</div>
+    <button onclick="add('Tandoori Chicken')">Add to Cart</button>
+  </div>
+
+  <div class="card">
+    <img src="grill.PNG">
+    <h3>Grilled Chicken</h3>
+    <div class="price">₹350</div>
+    <div class="rating">⭐⭐⭐⭐☆ (4.9)</div>
+    <button onclick="add('Grilled Chicken')">Add to Cart</button>
+  </div>
+
+  <div class="card">
+    <img src="briyani.PNG">
+    <h3>Biryani</h3>
+    <div class="price">₹250</div>
+    <div class="rating">⭐⭐⭐⭐☆ (4.9)</div>
+    <button onclick="add('Biryani')">Add to Cart</button>
+  </div>
+
+  <div class="card">
+    <img src="nonveg.PNG">
+    <h3>Non-veg Meals</h3>
+    <div class="price">₹200</div>
+    <div class="rating">⭐⭐⭐⭐☆ (4.8)</div>
+    <button onclick="add('Non-veg Meals')">Add to Cart</button>
+  </div>
+
+  <div class="card">
+    <img src="veg meals.PNG">
+    <h3>Veg Meals</h3>
+    <div class="price">₹149</div>
+    <div class="rating">⭐⭐⭐⭐☆ (4.8)</div>
+    <button onclick="add('Veg Meals')">Add to Cart</button>
+  </div>
+
+  <div class="card">
+    <img src="coco.PNG">
+    <h3>Coca Cola</h3>
+    <div class="price">₹40</div>
+    <div class="rating">⭐⭐⭐⭐☆ (4.4)</div>
+    <button onclick="add('Coca Cola')">Add to Cart</button>
+  </div>
+
+  <div class="card">
+    <img src="mango juice.PNG">
+    <h3>Mango Juice</h3>
+    <div class="price">₹70</div>
+    <div class="rating">⭐⭐⭐⭐☆ (4.7)</div>
+    <button onclick="add('Mango Juice')">Add to Cart</button>
+  </div>
+
+  <div class="card">
+    <img src="coffee.PNG">
+    <h3>Coffee</h3>
+    <div class="price">₹50</div>
+    <div class="rating">⭐⭐⭐⭐☆ (4.8)</div>
+    <button onclick="add('Coffee')">Add to Cart</button>
+  </div>
+
+  <div class="card">
+    <img src="tea.PNG">
+    <h3>Tea</h3>
+    <div class="price">₹60</div>
+    <div class="rating">⭐⭐⭐⭐☆ (4.7)</div>
+    <button onclick="add('Tea')">Add to Cart</button>
+  </div>
+
+  <div class="card">
+    <img src="fresh juice.PNG">
+    <h3>Fresh Juice</h3>
+    <div class="price">₹59</div>
+    <div class="rating">⭐⭐⭐⭐☆ (4.5)</div>
+    <button onclick="add('Fresh Juice')">Add to Cart</button>
+  </div>
+
+  <div class="card">
+    <img src="milkshake.PNG">
+    <h3>Milkshakes</h3>
+    <div class="price">₹99</div>
+    <div class="rating">⭐⭐⭐⭐☆ (4.8)</div>
+    <button onclick="add('Milkshakes')">Add to Cart</button>
+  </div>
+
+  <div class="card">
+    <img src="brownie.PNG">
+    <h3>Brownie</h3>
+    <div class="price">₹149</div>
+    <div class="rating">⭐⭐⭐⭐☆ (4.9)</div>
+    <button onclick="add('Brownie')">Add to Cart</button>
+  </div>
+
+  <div class="card">
+    <img src="cakes.PNG">
+    <h3>Cake</h3>
+    <div class="price">₹120</div>
+    <div class="rating">⭐⭐⭐⭐☆ (4.8)</div>
+    <button onclick="add('Cake')">Add to Cart</button>
+  </div>
+
+  <div class="card">
+    <img src="gulab.PNG">
+    <h3>Gulab Jamun</h3>
+    <div class="price">₹80</div>
+    <div class="rating">⭐⭐⭐⭐☆ (4.7)</div>
+    <button onclick="add('Gulab Jamun')">Add to Cart</button>
+  </div>
+
+  <div class="card">
+    <img src="ice creams.PNG">
+    <h3>Ice Cream</h3>
+    <div class="price">₹90</div>
+    <div class="rating">⭐⭐⭐⭐☆ (4.9)</div>
+    <button onclick="add('Ice creams')">Add to Cart</button>
+  </div>
+
+</div>
+
+<!-- CART -->
+<div class="cart" id="cart">
+  <h3>🛒 Cart Items</h3>
+  <ul id="list"></ul>
+  <button onclick="openOrder()">Place Order</button>
+</div>
+
+<!-- LOGIN -->
+<div class="modal" id="login">
+  <h3>Login</h3>
+  <input id="user" placeholder="Username"><br><br>
+  <input id="pass" type="password" placeholder="Password"><br><br>
+  <button onclick="login()">Login</button>
+</div>
+
+<!--nearby restaurants-->
+<!-- Nearby Restaurants Section -->
+<section id="nearby-restaurants">
+    <h2>🍽️ Nearby Restaurants</h2>
+
+    <div class="restaurant-card">
+        <h3>🍗 Biryani House</h3>
+        <p>⭐ 4.8 | 2.5 km away</p>
+    </div>
+
+    <div class="restaurant-card">
+        <h3>🍕 Pizza Corner</h3>
+        <p>⭐ 4.7 | 1.8 km away</p>
+    </div>
+
+    <div class="restaurant-card">
+        <h3>🥘 South Indian Special</h3>
+        <p>⭐ 4.9 | 1.2 km away</p>
+    </div>
+
+    <div class="restaurant-card">
+        <h3>🍔 Burger World</h3>
+        <p>⭐ 4.6 | 3 km away</p>
+    </div>
+
+    <div class="restaurant-card">
+        <h3>🥤 Cool Drinks Cafe</h3>
+        <p>⭐ 4.5 | 2 km away</p>
+    </div>
+
+    <div class="restaurant-card">
+        <h3>🍜 Chinese Delight</h3>
+        <p>⭐ 4.7 | 2.8 km away</p>
+    </div>
+</section>
+
+<!-- Order Form Section Starts Here -->
+<section id="order-form">
+    <!-- Your existing order form code -->
+</section>
+
+<!-- Customer Reviews -->
+<section id="reviews">
+    <h2>⭐ Customer Reviews</h2>
+
+    <input type="text" id="userName" placeholder="Enter Your Name">
+    <select id="rating">
+        <option value="⭐⭐⭐⭐⭐">5 Stars</option>
+        <option value="⭐⭐⭐⭐">4 Stars</option>
+        <option value="⭐⭐⭐">3 Stars</option>
+        <option value="⭐⭐">2 Stars</option>
+        <option value="⭐">1 Star</option>
+    </select>
+
+    <textarea id="reviewText" placeholder="Write your review"></textarea>
+    <button onclick="addReview()">Submit Review</button>
+
+    <div id="reviewList">
+        <div class="review-card">
+            <h3>Rahul Kumar</h3>
+            <p>⭐⭐⭐⭐⭐</p>
+            <p>Fast delivery and delicious food!</p>
+        </div>
+    </div>
+</section>
+
+<!-- ORDER -->
+<div class="orderForm" id="orderForm">
+  <h3>Order Details</h3>
+  <p id="error"></p>
+
+  <input id="name" placeholder="Name"><br><br>
+  <input id="phone" placeholder="Phone"><br><br>
+  <input id="address" placeholder="Address"><br><br>
+  <input id="coupon" placeholder="Enter Coupon Code (e.g.FOOD50)"><br><br>
+
+  <button onclick="openPayment()">Continue</button>
+</div>
+
+<!-- PAYMENT -->
+<div class="payment" id="pay">
+  <h3>Payment</h3>
+  <p id="discountText" style="color:green;font-weight: bold;"></p>
+  <label><input type="radio" name="p"> UPI</label><br>
+  <label><input type="radio" name="p"> Card</label><br>
+  <label><input type="radio" name="p"> COD</label><br>
+  <button onclick="confirmOrder()">Pay Now</button>
+</div>
+
+<!-- SUCCESS -->
+<div class="success" id="success">
+  <div class="success-box">
+    <h2>🎉 Payment Successful!</h2>
+    <p>Order Confirmed 🍔</p>
+    <button onclick="closeSuccess()">OK</button>
+  </div>
+</div>
+
+<!-- TRACKING -->
+<div class="track">
+  <h2>🚚 Tracking</h2>
+  <button onclick="startTracking()">Start</button>
+  <div id="messages"></div>
+</div>
+
+<footer>
+  <h3>Hungry Go🍔🚀</h3>
+  <p>Fast Delivery * Fresh Food * Best Offers</p>
+  <p>© 2026  Hungry Go🍔🚀 . All Rights Reserved.</p>
+</footer>
+
+<canvas id="confettiCanvas"></canvas>
+<div id="bike">🛵</div>
+
+<div id="customAlert" class="alert-box">
+  <p id="alertText"></p>
+  <button onclick="closeAlert()">OK</button>
+</div>
+ 
+<script src="script.js"></script>
+</body>
+</html>
